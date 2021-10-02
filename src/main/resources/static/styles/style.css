@@ -1,0 +1,19 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.navbar-brand {
+  margin-left: 10px;
+}
+
+.title_container {
+  margin-left: 10px;
+}
+
+.paste_container {
+  margin-left: 10px;
+}
+
+.footer_container {
+  margin-left: 10px;
+}
