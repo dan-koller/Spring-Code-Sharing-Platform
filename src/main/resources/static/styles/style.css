@@ -8,12 +8,15 @@ html {
 
 .title_container {
   margin-left: 10px;
+  margin-right: 10px;
 }
 
 .paste_container {
   margin-left: 10px;
+  margin-right: 10px;
 }
 
-.footer_container {
+.feed_container {
   margin-left: 10px;
+  margin-right: 10px;
 }

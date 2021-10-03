@@ -21,10 +21,12 @@
   <body>
     <div class="header_container">
       <nav class="navbar navbar-dark bg-primary">
-        <a class="navbar-brand" href="#">CodeShare - A Pastebin clone</a>
+        <a class="navbar-brand" href="#"
+          >CodeShare - Anonymously share code snippets</a
+        >
       </nav>
     </div>
-    <div class="title_container">Paste your code snippet below</div>
+    <div class="title_container"><h1>Paste your code snippet below</h1></div>
     <br />
     <!-- Code pasting field -->
     <div class="paste_container">
@@ -32,7 +34,7 @@
         <form onsubmit="send(); return false;">
           <label for="code_snippet">Code:</label>
           <br />
-          <textarea class="form-control" id="code_snippet" rows="5"></textarea>
+          <textarea class="form-control" id="code_snippet" rows="8"></textarea>
           <br />
           <button class="btn btn-primary" id="send_snippet" type="submit">
             Submit
@@ -41,7 +43,64 @@
       </div>
     </div>
     <br />
-    <div class="footer_container">
+    <div class="feed_container">
+      <h2>Recently pasted snippets:</h2>
+      <br />
+      <table class="table table-striped">
+        <thead>
+          <tr class="table-primary">
+            <th scope="col">Code</th>
+            <th scope="col">Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <pre>
+              class Main {
+                public static void main(String[] args) {
+                  Main m = new Main();
+                  m.go();
+                }
+              }
+          </pre
+              >
+            </td>
+            <td>14:15</td>
+          </tr>
+          <tr>
+            <td>
+              <pre>
+              class Main {
+                public static void main(String[] args) {
+                  Main m = new Main();
+                  m.go();
+                }
+              }
+          </pre
+              >
+            </td>
+            <td>14:01</td>
+          </tr>
+          <tr>
+            <td>
+              <pre>
+                class Main {
+                  public static void main(String[] args) {
+                    Main m = new Main();
+                    m.go();
+                  }
+                }
+            </pre
+              >
+            </td>
+            <td>13:45</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br />
+    <div class="modal-footer">
       Made with 💙 by <a href="https://github.com/dan-koller">Dan Koller</a>
     </div>
     <script src="../static/js/main.js"></script>
