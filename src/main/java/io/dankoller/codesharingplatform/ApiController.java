@@ -19,7 +19,7 @@ public class ApiController {
         snippet.setDateTime(LocalDateTime.now());
         this.snippet = snippet;
         allSnippets.add(this.snippet);
-        return "Successfully uploaded " + snippet.getCode();
+        return "Successfully uploaded \"" + snippet.getCode() + "\"";
     }
 
     // Return the latest code snippet
@@ -35,6 +35,7 @@ public class ApiController {
     }
 
     // Return all snippets
+    @GetMapping("/api/code/all")
     public ArrayList<CodeSnippet> getAllSnippets() {
         return allSnippets;
     }

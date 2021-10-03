@@ -1,3 +1,4 @@
+// Post current snippet to server
 function send() {
     let object = {
         "code": document.getElementById("code_snippet").value

@@ -2,40 +2,60 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Code sharing platform</title>
+    <title>CodeShare - Share anonymous code snippets</title>
     <link th:href="@{/styles/style.css}" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 </head>
 <body>
-<!--    <h1 th:text="${demo}"></h1>-->
-<h1>Upload your code snippets and share with others!</h1>
-
-<form onsubmit="send(); return false;">
-    <label for="code_snippet">Code:</label>
-    <br>
-    <textarea id="code_snippet"></textarea>
-    <br><br>
-    <button id="send_snippet" type="submit">Submit</button>
-</form>
+<div class="header_container">
+    <nav class="navbar navbar-dark bg-primary">
+        <a class="navbar-brand" href="#"
+        >CodeShare - Anonymously share code snippets</a
+        >
+    </nav>
+</div>
+<div class="title_container"><h1>Paste your code snippet below</h1></div>
+<br />
+<!-- Code pasting field -->
+<div class="paste_container">
+    <div class="form-group">
+        <form onsubmit="send(); return false;">
+            <label for="code_snippet">Code:</label>
+            <br />
+            <textarea class="form-control" id="code_snippet" rows="8"></textarea>
+            <br />
+            <button class="btn btn-primary" id="send_snippet" type="submit">
+                Submit
+            </button>
+        </form>
+    </div>
+</div>
+<br />
+<!-- Post snippets feed -->
+<div class="feed_container">
+    <h2>Recently pasted snippets:</h2>
+    <br />
+    <table class="table table-striped">
+        <thead>
+        <tr class="table-primary">
+            <th scope="col">Code</th>
+            <th scope="col">Time</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="snippet : ${code}">
+            <td><span th:text="${snippet}"></span></td>
+            <td><span th:text="${snippet}"></span></td>
+        </tbody>
+    </table>
+</div>
+<br />
+<!-- Footer -->
+<div class="modal-footer">
+    Made with 💙 by <a href="https://github.com/dan-koller">Dan Koller</a>
+</div>
+<!-- Additional scripts -->
 <script type="text/javascript" th:src="@{/js/main.js}"></script>
 <br>
-
-<h2>Previous snippets:</h2>
-<table class="table table-dark">
-    <thead>
-    <tr>
-        <th scope="col">Code</th>
-        <th scope="col">Date & Time</th>
-    </tr>
-    </thead>
-    <tbody>
-<!--    <tr>-->
-<!--        <td th:text="${new CodeSnippet.getCode()}"></td>-->
-<!--        <td th:text="${new CodeSnippet.getDateTime()}"></td>-->
-<!--    </tr>-->
-    </tbody>
-</table>
-<br>
-<footer>This site was made with Java, Spring, Bootstrap & 💙</footer>
 </body>
 </html>
