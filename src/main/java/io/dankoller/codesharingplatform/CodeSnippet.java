@@ -5,7 +5,7 @@ import java.time.format.DateTimeFormatter;
 
 public class CodeSnippet {
 
-    private String code = "initial commit";
+    private String code;
     // Format time stamp
     private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
     private String dateTime = LocalDateTime.now().format(formatter);

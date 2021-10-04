@@ -1,5 +1,7 @@
 package io.dankoller.codesharingplatform;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
@@ -7,7 +9,7 @@ import java.util.ArrayList;
 
 // Mapping for the API controller
 @RestController
-public class ApiController {
+public class RequestController {
 
     // Store code snippets
     private CodeSnippet snippet = new CodeSnippet();
@@ -39,4 +41,16 @@ public class ApiController {
     public ArrayList<CodeSnippet> getAllSnippets() {
         return allSnippets;
     }
+
+    @Controller
+    class WebInterface {
+        // Return frontpage
+        @GetMapping
+        public String getTemplate(Model model) {
+            model.addAttribute("code", snippet.getCode());
+            model.addAttribute("time", snippet.getDateTime());
+            return "index";
+        }
+    }
+
 }
