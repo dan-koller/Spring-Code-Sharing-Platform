@@ -48,8 +48,6 @@ public class RequestController {
         @GetMapping
         public String getTemplate(Model model) {
             model.addAttribute("codes", allSnippets);
-//            model.addAttribute("code", snippet.getCode());
-//            model.addAttribute("time", snippet.getDateTime());
             return "index";
         }
     }
