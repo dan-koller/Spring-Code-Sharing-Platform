@@ -47,6 +47,8 @@ public class RequestController {
         // Return frontpage
         @GetMapping
         public String getTemplate(Model model) {
+            // Reverse list to display the most recent posted snippet on top of the feed
+            Collections.reverse(allSnippets);
             model.addAttribute("codes", allSnippets);
             return "index";
         }
