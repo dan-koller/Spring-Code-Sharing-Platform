@@ -43,9 +43,9 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="snippet : ${code}">
-            <td><span th:text="${code}"></span></td>
-            <td><span th:text="${time}"></span></td>
+        <tr th:each="snippet : ${codes}">
+            <td><pre><span th:text="${snippet.getCode()}"></span></pre></td>
+            <td><span th:text="${snippet.getDateTime()}"></span></td>
         </tbody>
     </table>
 </div>

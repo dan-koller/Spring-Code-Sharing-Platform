@@ -5,7 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
+import java.util.*;
 
 // Mapping for the API controller
 @RestController
@@ -13,7 +13,7 @@ public class RequestController {
 
     // Store code snippets
     private CodeSnippet snippet = new CodeSnippet();
-    private ArrayList<CodeSnippet> allSnippets = new ArrayList<>();
+    private List<CodeSnippet> allSnippets = new ArrayList<>();
 
     // Post new snippets
     @PostMapping("/api/code/new")
@@ -38,7 +38,7 @@ public class RequestController {
 
     // Return all snippets
     @GetMapping("/api/code/all")
-    public ArrayList<CodeSnippet> getAllSnippets() {
+    public Collection<CodeSnippet> getAllSnippets() {
         return allSnippets;
     }
 
@@ -47,8 +47,9 @@ public class RequestController {
         // Return frontpage
         @GetMapping
         public String getTemplate(Model model) {
-            model.addAttribute("code", snippet.getCode());
-            model.addAttribute("time", snippet.getDateTime());
+            model.addAttribute("codes", allSnippets);
+//            model.addAttribute("code", snippet.getCode());
+//            model.addAttribute("time", snippet.getDateTime());
             return "index";
         }
     }
