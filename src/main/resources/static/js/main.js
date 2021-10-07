@@ -13,6 +13,8 @@ function send() {
 
     if (xhr.status === 200) {
         alert("Success!");
+        // Refresh page to show uploaded content in feed
+        location.reload();
     } else {
         alert("Failure")
     }
