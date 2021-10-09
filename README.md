@@ -25,6 +25,6 @@ This is a simple platform to copy, paste, share and receive code anonymously. I 
 
 
 ### Needs improvement:
-- Currently, data gets stored in memory. Advance this by adding a database connector (H2 or PostgreSQL worked best for me)
+- Currently, data gets stored in memory. Improve this by adding a database connector (H2 or PostgreSQL worked best for me)
 - Design can be upgraded (I just designed the basics, as I'm more of a backend developer :-))
 - Webpage gets rendered serverside. In order to view updates it currently needs to be refreshed (implement some sort of client-side rendering)
