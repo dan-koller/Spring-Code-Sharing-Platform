@@ -15,15 +15,24 @@ This is a simple platform to copy, paste, share and receive code anonymously. I 
 ## How to use:
 - **Build**: You can import this project as it is in an IDE (or editor) of your choice and build it with Gradle. I recommend JetBrains IntelliJ IDEA or Eclipse.
 
-
 - **API**: There are a few endpoints which can be accessed:
   - `/api/code/new` to **post** new code to the server (as **JSON** object e.g. `
-    {"code": "print("hello world")"}`)
-  - `/api/code/latest` to **get** the most recent uploaded code
-  - `/api/code/latest/{id}` to **get** an element by his id (0, 1, 2, etc.)
-  - `/api/code/all` to **get** a **JSON** Object with all the posted snippets
+    {"code": "print("hello world")"}`). You can set a time restriction in seconds and view limit as well (A zero in either value means the absence of the restriction).
+    This example (raw json body) posts a code snippet which can be viewed 2 times, but without time limit.:
+    {
+        "code": "public class Test {}",
+        "time": 0,
+        "views": 2
+    }
+  - `/api/code/latest` to **get** the most recent uploaded code (only non restricted)
+  - `/api/code/{uuid}` to **get** an element by its uuid (generated as return value on upload)
+
+- **WEB**: Web endpoints are available as well:
+  - `/code/new` to **post** new code to the server (You can set a time restriction in seconds and view limit)
+  - `/code/latest` to **get** the most recent uploaded code (only non restricted)
+  - `/code/{uuid}` to **get** an element by its uuid (*generation will be available soon*)
 
 
 ### Needs improvement:
-- Currently, data gets stored in memory. Improve this by adding a database connector (H2 or PostgreSQL worked best for me)
 - Design can be upgraded (I just designed the basics, as I'm more of a backend developer :-))
+- Display uuid in web to the user
