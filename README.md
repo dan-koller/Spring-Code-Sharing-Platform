@@ -10,7 +10,8 @@ This is a simple platform to copy, paste, share and receive code anonymously. I 
 - Gradle (Build)
 - Spring Boot (API, MVC)
 - Bootstrap (CSS)
-- Html, Javascript
+- Thymeleaf (HTML template engine)
+- JavaScript (Send objects to API)
 
 ## How to use:
 - **Build**: You can import this project as it is in an IDE (or editor) of your choice and build it with Gradle. I recommend JetBrains IntelliJ IDEA or Eclipse.
