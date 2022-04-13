@@ -28,15 +28,15 @@ Spring Boot and the MVC architecture. Feel free to use or contribute to this rep
                "code": "print("hello world")"
             }
 
-    - You can set a time restriction in seconds and view limit as well (A zero in either value means the absence of the
-      restriction). This example (raw json body) posts a code snippet which can be viewed 2 times, but without time
-      limit.:
+        - You can set a time restriction in seconds and view limit as well (A zero in either value means the absence of
+          the restriction). This example (raw json body) posts a code snippet which can be viewed 2 times, but without
+          time limit.:
 
-            {
-              "code": "public class Test {}",
-              "time": 0,
-              "views": 2
-            }
+              {
+                "code": "public class Test {}",
+                "time": 0,
+                "views": 2
+              }
 
     - `/api/code/latest` to **get** the most recent uploaded code (only non-restricted)
     - `/api/code/{uuid}` to **get** an element by its uuid (generated as return value on upload)
